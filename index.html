@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Delegados - XXIX Asamblea | Distrito Sur Fronterizo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        serifHeading: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        ocean: {
+                            800: '#0f4c5c',
+                            900: '#083344',
+                            950: '#041f2d',
+                        },
+                        coastal: {
+                            teal: '#14b8a6',
+                            turquoise: '#06b6d4',
+                            sand: '#f59e0b',
+                            sandLight: '#fef3c7',
+                            coral: '#fb7185',
+                            gold: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient { 
+            background: linear-gradient(135deg, rgba(4, 31, 45, 0.75) 0%, rgba(8, 51, 68, 0.65) 50%, rgba(15, 76, 92, 0.75) 100%), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; 
+        }
+        .glass-card { 
+            background: rgba(8, 51, 68, 0.55); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+        }
+        .glow-effect { 
+            box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.25); 
+        }
+        .gold-glow {
+            color: #fde047;
+            text-shadow: 0 0 20px rgba(234, 179, 8, 0.6), 0 0 40px rgba(234, 179, 8, 0.3), 0 0 60px rgba(251, 191, 36, 0.2);
+            background: linear-gradient(180deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <!-- Tema visual moderno y elegante estilo Brisa del Pacífico -->
+    <style id="modern-pacific-theme">
+        :root {
+            color-scheme: light;
+            --ink: #173f3b;
+            --ink-soft: #496762;
+            --muted: #6f8580;
+            --teal: #087f78;
+            --turquoise: #35bdb1;
+            --seafoam: #e4f3ec;
+            --sand: #fbf8ef;
+            --coral: #e98068;
+            --line: #dce8df;
+            --card: rgba(255,255,251,.94);
+            --shadow: 0 16px 42px rgba(24,63,60,.085);
+        }
+        html { background: var(--sand); scroll-padding-top: 6rem; }
+        body {
+            color: var(--ink) !important;
+            background:
+                radial-gradient(ellipse at 8% 8%, rgba(53,189,177,.12), transparent 26rem),
+                radial-gradient(ellipse at 92% 28%, rgba(233,128,104,.10), transparent 24rem),
+                linear-gradient(180deg, #fffdf7 0%, #f7f8f1 50%, #edf5ef 100%) !important;
+            font-family: Inter, sans-serif;
+            letter-spacing: -.012em;
+        }
+        ::selection { background: #bde9df; color: #173f3b; }
+        nav {
+            background: rgba(255,253,247,.92) !important;
+            border-bottom: 1px solid rgba(8,127,120,.15) !important;
+            box-shadow: 0 8px 26px rgba(23,63,59,.075) !important;
+            backdrop-filter: blur(18px) saturate(145%);
+            -webkit-backdrop-filter: blur(18px) saturate(145%);
+        }
+        nav > div > div { min-height: 5rem; }
+        nav .nav-link {
+            position: relative;
+            padding: .65rem .05rem;
+            color: var(--ink-soft) !important;
+            font-weight: 600;
+        }
+        nav .nav-link::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            left: 0; right: 100%; bottom: .25rem;
+            background: linear-gradient(90deg,var(--teal),var(--coral));
+            border-radius: 9px;
+            transition: right .22s ease;
+        }
+        nav .nav-link:hover::after, nav .nav-link.text-amber-300::after { right: 0; }
+        nav .nav-link:hover, nav .nav-link.text-amber-300 { color: var(--teal) !important; }
+        .page-view { animation: pageRise .42s cubic-bezier(.2,.75,.25,1) both; }
+        @keyframes pageRise { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+        [class*="bg-slate-"], [class*="bg-ocean-"] { background-color: var(--card) !important; }
+        [class*="border-slate-"], [class*="border-white"] { border-color: rgba(22,91,81,.14) !important; }
+        .rounded-3xl { border-radius: 1.65rem !important; }
+        .rounded-2xl { border-radius: 1.15rem !important; }
+        .glow-effect { box-shadow: 0 18px 48px rgba(8,127,120,.10) !important; }
+        .hero-gradient {
+            isolation: isolate;
+            background:
+                linear-gradient(105deg, rgba(255,253,245,.42) 0%, rgba(237,248,239,.18) 45%, rgba(243,248,237,.04) 100%),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat !important;
+            border: 1px solid rgba(8,127,120,.18) !important;
+            box-shadow: 0 24px 64px rgba(24,63,60,.12) !important;
+        }
+        .hero-gradient .text-white { color: var(--ink) !important; }
+        .hero-gradient .text-slate-300, .hero-gradient .text-slate-400 { color: #496762 !important; }
+        .gold-glow {
+            color: #086c65 !important;
+            text-shadow: none !important;
+            background: linear-gradient(120deg, #086c65 0%, #16a49a 52%, #d76f58 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+        .text-white { color: var(--ink) !important; }
+        .text-slate-100, .text-slate-200 { color: #244844 !important; }
+        .text-slate-300, .text-slate-400 { color: #526e67 !important; }
+        .text-amber-400, .text-amber-300 { color: #a95835 !important; }
+        .bg-gradient-to-r { background-image: linear-gradient(120deg, #087f78 0%, #25b9ae 58%, #eaa47c 100%) !important; }
+        input {
+            background-color: rgba(255,255,251,.98) !important;
+            color: var(--ink) !important;
+            border-color: #cddfd5 !important;
+        }
+        input::placeholder { color: #83968e !important; }
+        footer {
+            background: linear-gradient(120deg, #e8f4ec, #f9f4e7 70%, #f7e8dd) !important;
+            border-top: 1px solid #d5e5db !important;
+            color: var(--muted) !important;
+        }
+        footer .text-white { color: var(--ink) !important; }
+
+        /* Animación de pulso para el botón de voz */
+        @keyframes voicePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.55); }
+            50% { box-shadow: 0 0 0 18px rgba(220, 38, 38, 0); }
+        }
+        .listening-active {
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%) !important;
+            animation: voicePulse 1.4s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
+
+    <nav class="sticky top-0 z-50 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#inicio" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-700 border border-teal-600 flex items-center justify-center p-1 shadow-lg">
+                        <img src="NAZ-removebg-preview.png" alt="Logo Nazareno" class="w-full h-full object-contain filter brightness-125" onerror="this.src='https://placehold.co/100x100/1e1b4b/ffffff?text=NAZ'">
+                    </div>
+                    <div>
+                        <span class="block font-heading font-bold text-lg text-white leading-tight">Distrito Sur Fronterizo</span>
+                        <span class="block text-xs text-amber-400 font-medium tracking-wider uppercase">Iglesia del Nazareno</span>
+                    </div>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="#inicio" class="nav-link text-amber-300 font-semibold text-sm transition-colors">Inicio</a>
+                    <a href="#buscador" class="nav-link text-slate-300 hover:text-amber-300 font-semibold text-sm transition-colors">Buscador</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="inicio" class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <!-- PORTADA PRINCIPAL -->
+        <div class="page-view">
+            <header class="relative hero-gradient overflow-hidden py-12 lg:py-16 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="absolute -top-40 -left-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute top-1/2 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="max-w-3xl text-center lg:text-left space-y-5">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold tracking-wider uppercase">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                            <span>Evento Oficial Distrital</span>
+                        </div>
+                        <h1 class="font-heading font-black text-4xl sm:text-6xl tracking-tight leading-none gold-glow">
+                            XXIX ASAMBLEA
+                        </h1>
+                        <p class="font-heading font-bold text-xl sm:text-2xl text-amber-200/90 tracking-wide gold-glow">
+                            DISTRITO SUR FRONTERIZO
+                        </p>
+                        <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                            Unidos en fe, visión y propósito para inspirar a las nuevas generaciones.
+                        </p>
+                        
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                            <div class="flex items-center space-x-3 bg-slate-900/90 border border-slate-800 px-4 py-3 rounded-2xl">
+                                <div class="text-amber-400 text-xl"><i class="fa-solid fa-calendar-days"></i></div>
+                                <div class="text-left">
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Fechas</span>
+                                    <span class="text-sm font-bold text-white">23 y 24 Noviembre, 2026</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-slate-900/90 border border-slate-800 px-4 py-3 rounded-2xl">
+                                <div class="text-amber-400 text-xl"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="text-left">
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Lugar</span>
+                                    <span class="text-sm font-bold text-white">C.C.R.N.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-slate-900/90 border border-slate-800 px-4 py-3 rounded-2xl">
+                                <div class="text-amber-400 text-xl"><i class="fa-solid fa-users-viewfinder"></i></div>
+                                <div class="text-left">
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Registro Total</span>
+                                    <span class="text-sm font-bold text-white">92 Iglesias • 348 Delegados</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- BUSCADOR DE DELEGADOS CON VOZ -->
+        <section id="buscador" class="max-w-5xl mx-auto space-y-8">
+            <div class="bg-slate-900/95 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+                <div class="text-center space-y-2">
+                    <span class="text-amber-400 font-semibold text-xs tracking-widest uppercase">Verificación de Certificados</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Buscador de Delegados</h2>
+                    <p class="text-slate-400 text-sm sm:text-base">Escribe o dicta por voz el nombre de la <strong>Iglesia</strong> o del <strong>Pastor</strong> (ej. <strong>1a de Ciudad Hidalgo</strong>).</p>
+                </div>
+
+                <!-- Caja de Búsqueda -->
+                <div class="relative max-w-3xl mx-auto">
+                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-amber-400 text-lg">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        oninput="buscarDelegados()" 
+                        placeholder="Ej. 1a de Ciudad Hidalgo, Tapachula, Josué Barrios..." 
+                        class="w-full border-2 rounded-2xl pl-13 pr-12 py-4 sm:py-5 text-base sm:text-lg font-medium focus:outline-none focus:border-teal-600 transition-all shadow-md"
+                        style="padding-left: 3.25rem;"
+                    >
+                    <button 
+                        type="button" 
+                        id="clear-btn" 
+                        onclick="limpiarBusqueda()" 
+                        title="Limpiar búsqueda"
+                        class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-red-500 transition-colors text-xl"
+                    >
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Botón Grande para Búsqueda por Voz -->
+                <div class="flex flex-col items-center justify-center space-y-3 pt-1">
+                    <button 
+                        type="button" 
+                        id="voice-btn" 
+                        onclick="iniciarBusquedaVoz()" 
+                        class="w-full sm:w-auto min-w-[300px] sm:min-w-[380px] py-5 px-8 rounded-2xl bg-gradient-to-r text-white font-heading font-extrabold text-lg sm:text-xl tracking-wide shadow-xl hover:scale-[1.02] active:scale-[0.99] transition-all flex items-center justify-center space-x-4 cursor-pointer"
+                        style="color: #ffffff !important;"
+                    >
+                        <i id="voice-icon" class="fa-solid fa-microphone text-2xl sm:text-3xl"></i>
+                        <span id="voice-label">ACTIVAR BÚSQUEDA POR VOZ</span>
+                    </button>
+                    <p id="voice-status" class="text-xs sm:text-sm font-medium text-slate-400 h-5 text-center"></p>
+                </div>
+            </div>
+
+            <!-- Contenedor de Resultados -->
+            <div id="results-wrapper" class="space-y-6">
+                <div class="flex items-center justify-between px-2">
+                    <span id="results-counter" class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-400">
+                        Ingresa o dicta el nombre de una iglesia o pastor para ver su certificado
+                    </span>
+                </div>
+                <div id="results-container" class="space-y-6"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 mt-20 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="font-heading font-bold text-white text-base">XXIX Asamblea - Distrito Sur Fronterizo</p>
+                <p class="text-xs text-slate-500 mt-1">Iglesia del Nazareno • C.C.R.N.</p>
+            </div>
+            <p class="text-xs text-slate-600">© 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const certificadosData = [{"iglesia": "1a de Álvaro Obregón", "pastor": "PBRO. BELSAÍN GUZMAN NOLASCO", "telefono": "9622582898", "zona": "Zona 3", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Edgar Parrales Messina, Israel Pérez Reyes"}, {"iglesia": "1a de Ciudad Hidalgo", "pastor": "PBRO. ROBERTO LOPEZ FAJARDO", "telefono": "9621336395", "zona": "Zona 5", "confirmados": 11, "mni": "Juana Galeana Domínguez", "jni": "Elisa maday gallardo González", "dni": "Magali Jazmín Regalado González", "delegados": "Miguel Antonio Regalado Martínez, Adolfo Díaz Gutiérrez, Jeremías Estrada Aguilar, Michael Antón Menenses, Césalmiro Reina Hernández"}, {"iglesia": "1a de Huixtla", "pastor": "M. LIC. JOSUÉ IVÁN HERNÁNDEZ HERNÁNDEZ", "telefono": "9641090654", "zona": "Zona 2", "confirmados": 6, "mni": "Carmen Cecilia Velázquez", "jni": "Saddy Aguilar Vázquez", "dni": "Edith Hernández González", "delegados": "Edmundo Méndez Bautista, Carmina Cordero Salas"}, {"iglesia": "1a de Puerto Madero", "pastor": "PBRO. JESÚS NOÉ MATÍAS URBINA", "telefono": "9622120793", "zona": "Zona 4", "confirmados": 3, "mni": "Dulce Reyes Ochoa", "jni": "Jared Damian Reyes", "dni": "Guadalupe Arevalo S", "delegados": "Abimael Martinez, Adrian Peralta"}, {"iglesia": "1a de Tapachula", "pastor": "PBRO. JORGE BARRIENTOS MÁRQUEZ", "telefono": "9641165564", "zona": "Zona 4", "confirmados": 8, "mni": "Patricia Delgado", "jni": "Carlos A. de León Solís", "dni": "Dania Cruz de Lucio", "delegados": "Adriana Ojeda Fierro, Homero Ojeda Fierro, Erika Hernández Cárdenas"}, {"iglesia": "20 de Noviembre", "pastor": "M. LIC. CÉSAR OZUNA LÓPEZ", "telefono": "9616264903", "zona": "Zona 5", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Vicente E. Lopez Rojas, Vítor Manuel Perez López"}, {"iglesia": "2a de Álvaro Obregón", "pastor": "M.L. JAIRO VIDAL COLOMO", "telefono": "9622108359", "zona": "Zona 3", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Marcos Cepeda Munzon, Nanci Patricia Jimenez Mendez"}, {"iglesia": "2a de Ciudad Hidalgo", "pastor": "PBRO. ELMER CELAYA ESCOBAR", "telefono": "9621412479", "zona": "Zona 5", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "José Antonio Macario"}, {"iglesia": "2a de Huixtla", "pastor": "M. L. OLENA IBARRA BORRALLES", "telefono": "9641091585", "zona": "Zona 2", "confirmados": 2, "mni": "Josefina Rodríguez", "jni": "Génesis A. Hernández Barrios", "dni": "Miriam Patricia Barrios", "delegados": "Ernesto Hernández Noriega"}, {"iglesia": "2a de Tapachula", "pastor": "M. LIC. DAVID ZAVALA ESPINOSA", "telefono": "9621129666", "zona": "Zona 4", "confirmados": 6, "mni": "Lidia Escobar Ramírez", "jni": "Emperatriz Pérez Trinidad", "dni": "Elizabeth López Reyes", "delegados": "Alberto Ponches Martínez, Humberto Aguilar Díaz"}, {"iglesia": "3a de Ciudad Hidalgo", "pastor": "M. LIC. ISAAC ESTEBAN ROMERO MEZA", "telefono": "9621648985", "zona": "Zona 5", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Julia Coutiño Ávila, Rafael Gordillo Escobar"}, {"iglesia": "3a de Huixtla", "pastor": "PBRO. BERZAIN ROJAS LÓPEZ", "telefono": "9646275465", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Norma Elena Silva Márquez, Jorge Martínez Martínez"}, {"iglesia": "3a de Motozintla", "pastor": "M. LIC. IVÓN YAZMÍN NAVARRO VENTURA", "telefono": "9622181397", "zona": "Zona 1", "confirmados": 4, "mni": "Andrea Marely Valeria", "jni": "Abisai Rolas Hernández", "dni": "Rosa Elena Gutiérrez García", "delegados": "Andrea Marelli Ventura Pérez"}, {"iglesia": "3a de Tapachula", "pastor": "PBRO. PEDRO SANTOS CHÁVEZ", "telefono": "9651130133", "zona": "Zona 4", "confirmados": 7, "mni": "Alejandra Cozar Cundapi", "jni": "Isaía Tonchez Carballo", "dni": "Lizzette Jimenez López", "delegados": "Sergio A. Velazco López, José Luis López Arevalo, Ivete Lara Martínez, Blanca E. Carballo Martínez, Rebeca Galindo de León, Vicent M. Vazquez Hérnandez, Conepcion Mendez Aguilar"}, {"iglesia": "4a de Tapachula", "pastor": "M. LIC. ITIEL MATEO PÉREZ", "telefono": "9621128132", "zona": "Zona 4", "confirmados": 4, "mni": "Eloida Gómez Hernández", "jni": "Keyla López Vázquez", "dni": "Jacqueline Ordóñez", "delegados": "Jesús Morales Gordillo, Mabel Salinas Flores, Isabel"}, {"iglesia": "5 de Mayo", "pastor": "M. LIC. MIGUEL ROMERO CRUZ", "telefono": "9621495885", "zona": "Zona 5", "confirmados": 4, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "5a de Tapachula", "pastor": "PBRO. ALEXANDER LÓPEZ TORRES", "telefono": "9622170250", "zona": "Zona 4", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Patricia Esmeralda Escobar Cisneros, Alexander Hernández Cholac"}, {"iglesia": "6a de Tapachula", "pastor": "PBRA. ANA VAZQUEZ CRUZ", "telefono": "9622092055", "zona": "Zona 4", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Magali Zacarias Gamboa"}, {"iglesia": "8a de Tapachula", "pastor": "M. LIC. KEYLA MERARI PEREZ MONTOYA", "telefono": "9622763210", "zona": "Zona 4", "confirmados": 1, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "9a de Tapachula", "pastor": "PBRO. BARTOLO ESCOBAR RIZO", "telefono": "9813947374", "zona": "Zona 4", "confirmados": 4, "mni": "No indica", "jni": "José Escobar Aguilar", "dni": "No indica", "delegados": "José Escobar Aguilar, Miguel Arriola López"}, {"iglesia": "Adonai", "pastor": "M. L. ISSAC GUZMAN MORALES", "telefono": "9621455979", "zona": "Zona 4", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "María del Carmen Salas Miranda, Pilar Morales Romero"}, {"iglesia": "Adulam", "pastor": "PBRO. NESTOR MARROQUIN MALDONADO", "telefono": "9621512026", "zona": "Zona 2", "confirmados": 2, "mni": "Brenda Rojas", "jni": "Vanesa Ochoa", "dni": "Dania Ivette", "delegados": "Cecilio Blas Cordero"}, {"iglesia": "Alfa y Omega", "pastor": "PBRO. ULISES CAMAS MARROQUIN", "telefono": "9641833812", "zona": "Zona 2", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "José Juan Díaz Benítez"}, {"iglesia": "Arca de Salvación", "pastor": "PBRO. ROBERTO CALEB LÓPEZ ALVARADO", "telefono": "9621530525", "zona": "Zona 3", "confirmados": 6, "mni": "Itzel Marroquín Gálvez", "jni": "Samuel Velázquez López", "dni": "Uzmara Samaín Pérez", "delegados": "Adalberto Cigarroa Agustín, Blanca de la Cruz Herrera Ruiz"}, {"iglesia": "Barra de San José", "pastor": "M. LIC. SERGIO A. GONZÁLEZ MONTERROSA", "telefono": "9622044382", "zona": "Zona 3", "confirmados": 2, "mni": "Brenda de León Flores", "jni": "Alan Rodríguez Villalobos", "dni": "Armando Méndez Pérez", "delegados": "Lauro Leopoldo Rodríguez López"}, {"iglesia": "Barrio Las Flores", "pastor": "PBRO. RUSSELL TAMAYO CASTRO", "telefono": "9641159260", "zona": "Zona 1", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Flor Marleny Perez Perez, Reina Isabel"}, {"iglesia": "Belisario Dominguez", "pastor": "M. LIC. JONATAN MATEO PEREZ", "telefono": "9625199624", "zona": "Zona 1", "confirmados": 4, "mni": "Gabriela de Jesús Anzuelo", "jni": "Abelardo López Gómez", "dni": "Luz Deli Luz Parra Hernández", "delegados": "Joaquín Suastec Marcelino, Graciela de Jesús Anzueto Morales"}, {"iglesia": "Betania", "pastor": "PBRO. BELIZARIO LÓPEZ BLAS", "telefono": "9624839852", "zona": "Zona 2", "confirmados": 5, "mni": "Araceli Martínez", "jni": "Felipe Martínez", "dni": "Amanda López", "delegados": "Belisario López Blas, Felipe Martínez"}, {"iglesia": "Betesda", "pastor": "M. LIC. JESÚS ALBERTO GUIZAR LUCAS", "telefono": "9622631964", "zona": "Zona 3", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Elsa Jiménez Pérez, Samuel González Pérez"}, {"iglesia": "Bethel", "pastor": "M.L. MIZAEL CRUZ SOLORZANO", "telefono": "9641003488", "zona": "Zona 2", "confirmados": 4, "mni": "Noemí Torilla Dinocio", "jni": "No indica", "dni": "Karina Rodríguez Torres", "delegados": "José González López"}, {"iglesia": "Brisas del Mar", "pastor": "M.LIC. MEDARDO REYES OCHOA", "telefono": "9621237558", "zona": "Zona 5", "confirmados": 4, "mni": "Carolina Morales Aguilar", "jni": "Floridalma Raquel Pérez", "dni": "Magdalena García Álvarez", "delegados": "No aplica"}, {"iglesia": "Buenos Aires", "pastor": "PBRO. MARCO TULIO BARRIOS", "telefono": "9622739202", "zona": "Zona 3", "confirmados": 6, "mni": "Eida Q. Ventura", "jni": "Guillermo González", "dni": "Esther Santiago Moreno", "delegados": "Valpina Ramos Cruz, Bartolo Bravos Díaz"}, {"iglesia": "Cacahoatán", "pastor": "PBRO. EDGAR DANIEL SANTIAGO ENRÍQUEZ", "telefono": "9625135448", "zona": "Zona 4", "confirmados": 4, "mni": "Claudia I Monzon Hernandez", "jni": "No indica", "dni": "No indica", "delegados": "Marven Mendoza Contreras, Manuel Mendez Ortiz"}, {"iglesia": "Camino a la Tierra", "pastor": "M. L. JAIME LOPEZ", "telefono": "9625654227", "zona": "Zona 4", "confirmados": 3, "mni": "Deesenia Jacqueline Maldonado López", "jni": "Cindy Daniela Ordóñez", "dni": "Manuela Pérez García", "delegados": "Anatorio Pérez de León, Brian A. López Maldonado"}, {"iglesia": "Camino al Cielo", "pastor": "PBRO. ANA JOCABED VÁZQUEZ VALLES", "telefono": "9651194480", "zona": "Zona 2", "confirmados": 4, "mni": "Amanta Montoya", "jni": "Génesis Pérez", "dni": "Marlenis Aguilar", "delegados": "Lady Patricia Argüello, Elvia Gómez Reyes"}, {"iglesia": "Camino de Santidad", "pastor": "M.L. RAYMUNDO VÁZQUEZ BERNARDO", "telefono": "9641006697", "zona": "Zona 2", "confirmados": 1, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "Cantón Bodegas", "pastor": "M.L. ERIC SOLIS GÓMEZ", "telefono": "9623172845", "zona": "Zona 5", "confirmados": 3, "mni": "Erida Marlene Pérez García", "jni": "Eva Solís Gómez", "dni": "No indica", "delegados": "Fernando Escobedo Barrios, Julio César García Salazar"}, {"iglesia": "Cantón Las Viudas", "pastor": "M.L. ARTURO ARMENDARIZ PAZ", "telefono": "9622525566", "zona": "Zona 5", "confirmados": 4, "mni": "Otilia Palomeque", "jni": "Sergio de la Cruz", "dni": "El Material Vázquez", "delegados": "No indica"}, {"iglesia": "Chamulapa", "pastor": "M.L. JOSE IGNACIO GARCIA MEJIA", "telefono": "9625094615", "zona": "Zona 3", "confirmados": 4, "mni": "María Antonia López Díaz", "jni": "No indica", "dni": "No indica", "delegados": "Viridiana Pérez Velázquez, Lorena Hernández"}, {"iglesia": "Colonia Hidalgo", "pastor": "PBRO. EVER MACIAS MEJIA", "telefono": "9621702476", "zona": "Zona 4", "confirmados": 5, "mni": "Tania Méndez", "jni": "No indica", "dni": "No indica", "delegados": "Joel Cruz Argueta, Eliazar Cruz Argueta, Mayra Arevalo"}, {"iglesia": "Colonia Obrera", "pastor": "PBRO. FÉLIX AMÉZTICA MADRID", "telefono": "9622089718", "zona": "Zona 2", "confirmados": 5, "mni": "Yasmina Avendaño", "jni": "Julio Sánchez", "dni": "Reina Pérez López", "delegados": "Felicita Sumusa Alvarado"}, {"iglesia": "Congregación Reforma", "pastor": "PBRO. JUDITH PATRICIA JIMÉNEZ SÁNCHEZ", "telefono": "9618735206", "zona": "Zona 4", "confirmados": 6, "mni": "Arsenia Moreno López", "jni": "Francisco Ramírez Ordóñez", "dni": "Celis Flora Cisneros", "delegados": "Celio Muñoz Blas, Marlene García Ochoa"}, {"iglesia": "Cristo la Roca", "pastor": "M. LIC. ABEL BARRIOS RUIZ", "telefono": "9622417307", "zona": "Zona 4", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Marcelino Bartolon Chun, Herminio Pérez Romero"}, {"iglesia": "Ebenezer", "pastor": "M.L. GABRIELA HERNANDEZ PEREZ", "telefono": "9661239564", "zona": "Zona 3", "confirmados": 4, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Jose Alberto Orellana, Martha Patricia Lopez, Romeo Morales"}, {"iglesia": "El Arenal", "pastor": "PBRO. GUILLERMO SALDAÑA MORENO", "telefono": "9646240737", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "René Gómez Limón, Noemí Bautista Chong"}, {"iglesia": "EL CAMPITO", "pastor": "PBRO. ANTONIO RAMIREZ LÓPEZ", "telefono": "9621481963", "zona": "Zona 5", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Fidel López Godines"}, {"iglesia": "El Capulín", "pastor": "PBRO. FREDY DE LEÓN JUÁREZ", "telefono": "9621685144", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Nelvi Olivera Zepeda, EsauPacheco Garcia"}, {"iglesia": "Emmanuel", "pastor": "PBRO. FABRICIO VÁZQUEZ ARIAS", "telefono": "9621844897", "zona": "Zona 4", "confirmados": 7, "mni": "Nolberta Paz Cueto", "jni": "Cynthia Koral Vazquez", "dni": "Carmela Duran Cardenas", "delegados": "Marivel Salinas, Imelda Gonzalez Perez, Antonio Rodriguez"}, {"iglesia": "Filadelfia", "pastor": "M.L. LUCAS VÁZQUEZ CORTES", "telefono": "9641385760", "zona": "Zona 2", "confirmados": 4, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Sergio Santiago, Nery Hernandez López"}, {"iglesia": "Frontera Hidalgo", "pastor": "M. LIC. MARTHA EDITH RODRIGUEZ ZAVALA", "telefono": "9621392017", "zona": "Zona 5", "confirmados": 2, "mni": "Yadira Pérez Martínez", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "Getsemani", "pastor": "M. LIC. CARLOS OCEGUERA GONZÁLEZ", "telefono": "9621118522", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Marcela Astudillo Escobar, Bulmaro Márquez Rojas"}, {"iglesia": "Guachipilín", "pastor": "PBRO. NATANAEL DE LEÓN CIGARROA", "telefono": "9621692787", "zona": "Zona 3", "confirmados": 3, "mni": "Elías López Hernández", "jni": "Lorena Salas Chong", "dni": "Rocío Reyes López", "delegados": "Samuel Rosario Agustín, Urania Chan Cruz"}, {"iglesia": "Huanacastle", "pastor": "PBRO. AGUSTÍN QUIROGA ÁVILA", "telefono": "9622538913", "zona": "Zona 2", "confirmados": 4, "mni": "Teresa de Jesús López Cordero", "jni": "Neftalí López Jiménez", "dni": "Adaluz López Jiménez", "delegados": "Isaías Tobilla Maldonado, Moisés Pacheco López"}, {"iglesia": "Huehuetán Estación", "pastor": "PBRO. BERNARDO ELIEZER GONZÁLEZ GONZÁLEZ", "telefono": "9611319901", "zona": "Zona 3", "confirmados": 1, "mni": "Yeina Flor Reyes Anzueto", "jni": "Jhadai Belén López Ortíz", "dni": "Jarumi Linsay Reyes Anzueto", "delegados": "Cecilia de León de La Cruz, Adriana Cruz González, Alan Edrahi Estrada López, Noelí Martínez Hernández"}, {"iglesia": "Ignacio Zaragoza", "pastor": "PBRO. MARCO ANTONIO HERRERA CONSTANTINO", "telefono": "9621656118", "zona": "Zona 5", "confirmados": 3, "mni": "Esther González Girón", "jni": "Anabel de la Cruz Mejía", "dni": "Dalila Gómez Gómez", "delegados": "Elizabeth Gómez Gómez"}, {"iglesia": "Islamapita", "pastor": "M. LIC. BERSABET JIMÉNEZ PÉREZ", "telefono": "9641033525", "zona": "Zona 2", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Luciano Soto Aguilar"}, {"iglesia": "Jesús El Salvador", "pastor": "M. L. DAVID PAZ", "telefono": "9641380300", "zona": "Zona 2", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Lizbeth Medina Rodríguez"}, {"iglesia": "Kairos", "pastor": "PBRO. JOSÉ ALFREDO SOLÌS SANTOS", "telefono": "9621171504", "zona": "Zona 5", "confirmados": 4, "mni": "Fabiola Mejía", "jni": "Adriana Solís", "dni": "Paula Arreola", "delegados": "No indica"}, {"iglesia": "Kedusha", "pastor": "PBRO. RUBBER PÉREZ GUERRERO", "telefono": "9625383669", "zona": "Zona 3", "confirmados": 4, "mni": "Marlene García Camilo", "jni": "Roberto Rodríguez Meza", "dni": "Eladio Hernández", "delegados": "Eladio Hernández Rincón, Marlene García Camilo"}, {"iglesia": "La Fe", "pastor": "M. LIC. JONATHAN AGUILAR BARTOLON", "telefono": "9621362641", "zona": "Zona 4", "confirmados": 3, "mni": "Alama Yeli Saucedo Velazquez", "jni": "Maria Angeles Flores Aguilar", "dni": "Samuel Jimnez Toledo", "delegados": "Diana Lizbeth López Avendaño"}, {"iglesia": "La Gloria de Dios", "pastor": "PBRO JULIO CESAR LEY", "telefono": "9626956271", "zona": "Zona 4", "confirmados": 6, "mni": "Amalia Graciela Miguel Velázquez", "jni": "Saul López Citalan", "dni": "Ever Macías Rodas", "delegados": "Karel hidalgo Díaz, Alan Arturo Hernández"}, {"iglesia": "Lázaro Cárdenas", "pastor": "PBRO. TEODOMIRO AGUILAR OCHOA", "telefono": "9622706373", "zona": "Zona 2", "confirmados": 4, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Aldai Rosario Perez, Pedro Nauh Jimenez, Deyner Gutierrez"}, {"iglesia": "Llano la Lima", "pastor": "M. LIC. INMER FLORES MACÍAS", "telefono": "9621306378", "zona": "Zona 4", "confirmados": 4, "mni": "No indica", "jni": "No implica", "dni": "No indica", "delegados": "Ángela García de los Santos, Anabel Solís Vera"}, {"iglesia": "Lluvias de Gracia", "pastor": "M.L. PEDRO ROBERTO ROBLEDO LÓPEZ", "telefono": "9621220882", "zona": "Zona 4", "confirmados": 4, "mni": "Blanca López Ovalle", "jni": "Mauricio", "dni": "Carolina Valle", "delegados": "René Ramírez de los Reyes, Ervin Cisneros"}, {"iglesia": "Mahanaìn", "pastor": "PBRO. PABLO ZUNÚN LÓPEZ", "telefono": "9621309729", "zona": "Zona 2", "confirmados": 6
+, "mni": "Teresa Salas", "jni": "Orlando Santiago Franco", "dni": "Branda Marisol Mancilla Aldana", "delegados": "Delia Santiago Bautista, Carmen Marroquin Mendez"}, {"iglesia": "Maranatha", "pastor": "M. LIC. REBECA MORALES ROBLERO", "telefono": "9622701390", "zona": "Zona 2", "confirmados": 4, "mni": "Vitalina González López", "jni": "Ernesto Sánchez de la O", "dni": "Sara Viviana Barrios", "delegados": "Faustino Gordillo, Rebeca Nájera Gutiérrez"}, {"iglesia": "Marte R. Gómez", "pastor": "M.L. VICTOR MANUEL SANTIS VIDAL", "telefono": "9621392204", "zona": "Zona 3", "confirmados": 3, "mni": "Amparo Santos Vidal", "jni": "No indica", "dni": "No indica", "delegados": "Irma Ambrosio Morales"}, {"iglesia": "Mazatán", "pastor": "PBRO. MIGUEL GÓMEZ REYES", "telefono": "9621977366", "zona": "Zona 3", "confirmados": 3, "mni": "De Santa Escobar Ramos", "jni": "Beatriz Adriana Escobar", "dni": "María Guadalupe García", "delegados": "Imer Santizo Ovilla, José Antonio Sandoval"}, {"iglesia": "Monte de los Olivos", "pastor": "PBRO. NILTON ORFEO GERARDO MORGA", "telefono": "9661150845", "zona": "Zona 4", "confirmados": 6, "mni": "Olga Libia González Castillo", "jni": "Jorge Vázquez López", "dni": "Lizbeth Osorio Carrasquedo", "delegados": "Ever Exporta Agustín, Javier Alejandro Velázquez Bautista"}, {"iglesia": "Monte de Santidad", "pastor": "M. LIC. NEHEMÍAS HERNÁNDEZ GUZMÁN", "telefono": "9641131475", "zona": "Zona 2", "confirmados": 4, "mni": "Leticia Esteban Pacheco", "jni": "Irma Isabel González Pérez", "dni": "Virginia Morales Romero", "delegados": "No indica"}, {"iglesia": "Monte Horeb", "pastor": "PBRO. ROBERTO NAJERA ALVAREZ", "telefono": "9641025346", "zona": "Zona 2", "confirmados": 4, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "Monte Sinaí", "pastor": "M. LIC. IVETE SAYURI MÉNDEZ TORRES", "telefono": "9622312736", "zona": "Zona 2", "confirmados": 6, "mni": "Mérida de Lidia López Pérez", "jni": "Luis Ángel Guerrero Martínez", "dni": "Gisela Mailey Barrios Pérez", "delegados": "Prisilia Méndez Torres, Heriberto García Pérez"}, {"iglesia": "Motozintla Central", "pastor": "M. LIC. JONATAN AGUILAR CORONEL", "telefono": "9641108296", "zona": "Zona 1", "confirmados": 6, "mni": "Claudia Rojas Bautista", "jni": "Janet Marisol Morales", "dni": "Omeli Fernández Marroquín", "delegados": "Álvaro López Escalante, China Aguilar"}, {"iglesia": "Nancillal", "pastor": "PBRO. AMAURI GUZMÁN NOLASCO", "telefono": "9621847002", "zona": "Zona 2", "confirmados": 6, "mni": "Domínguez García", "jni": "Gladys Ventura Jiménez", "dni": "Yadira Sandoval Torres", "delegados": "Eva Ogaza Tapia"}, {"iglesia": "Nuevo Nacimiento", "pastor": "PBRO. RAQUEL BAUTISTA CHONGO", "telefono": "9641025623", "zona": "Zona 2", "confirmados": 3, "mni": "Dalia Ordóñez", "jni": "Nayeli Reyes Suárez", "dni": "Gloria López Gálvez", "delegados": "Esther González Gálvez, Leonardo Neftalí Pérez Ramos"}, {"iglesia": "Peniel", "pastor": "PBRO. NARCISO GONZÁLEZ GARCÍA", "telefono": "9621041276", "zona": "Zona 3", "confirmados": 5, "mni": "Edith Reyes Flores", "jni": "Genesis A Cigarroa Reyes", "dni": "Lester Ramirez Martinez", "delegados": "Orfa Monterrosa Santizo"}, {"iglesia": "Plan de Iguala", "pastor": "M.L. OSCAR FERNANDO VICENTE GONZÁLEZ", "telefono": "9616257915", "zona": "Zona 3", "confirmados": 5, "mni": "Laura Esther Zavala López", "jni": "María Rosario Abraham Castillo", "dni": "Alma Hernández", "delegados": "Benito Ríos Damián"}, {"iglesia": "Playa Grande", "pastor": "PBRO. BELSAY LÓPEZ LÓPEZ", "telefono": "9641128725", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "Consuelo Quintero Améstica", "dni": "No aplica", "delegados": "Abel López Santizo"}, {"iglesia": "Puerta del Cielo", "pastor": "M. LIC. JESÚS ALBERTO GUILLÉN PEÑA", "telefono": "9618740666", "zona": "Zona 4", "confirmados": 4, "mni": "José Luis Becerra", "jni": "Ignacio Arévalo Hernández", "dni": "Matilde Méndez García", "delegados": "Juan Carlos Velázquez, José Daniel Becerra"}, {"iglesia": "Rancho Nuevo", "pastor": "PBRO. SALOMÓN ANTONIO MARCOS", "telefono": "9181283020", "zona": "Zona 2", "confirmados": 6, "mni": "Melda Guzmán", "jni": "Amidalani Velázquez", "dni": "Gabriela Escobar", "delegados": "Ángel Martínez, Josefina Orozco (Laicos)"}, {"iglesia": "Raymundo Enrique", "pastor": "M. LIC. EDER DE PAZ OSORIO", "telefono": "9621446657", "zona": "Zona 4", "confirmados": 4, "mni": "Giovanni Mazariegos", "jni": "Josué Samuel de León Maldonado", "dni": "María Guadalupe García", "delegados": "Verónica Maldonado Pérez"}, {"iglesia": "Rivera Morelos", "pastor": "M. L. ADONAI ARAIM ROBLERO MEJIA", "telefono": "No indica", "zona": "Zona 1", "confirmados": 4, "mni": "Elizabeth Escobar Olmos", "jni": "No indica", "dni": "Kenia Morales López", "delegados": "Elizabeth Escobar Olmos, Rebeca Pérez Pérez"}, {"iglesia": "Santa Clara", "pastor": "PBRO. ADAIA V. ARGUETA GUILLEN", "telefono": "9621947555", "zona": "Zona 3", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Eloísa Méndez López, Adelina Hernández Martínez"}, {"iglesia": "Shadai", "pastor": "PBRO. RODOLFO LÓPEZ LÓPEZ", "telefono": "9621229269", "zona": "Zona 4", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Elmer Barrios Ruiz"}, {"iglesia": "SHALOM", "pastor": "M. LIC. CINDY LIZBETH LÓPEZ MIGUEL", "telefono": "9622603649", "zona": "Zona 4", "confirmados": 4, "mni": "Margarita Miguel", "jni": "No indica", "dni": "Rosa Antonia Ramírez", "delegados": "Margarita Hernández Gálvez, Margarita Miguel Vázquez"}, {"iglesia": "Shekiná", "pastor": "M.L. JONATHAN FRANCO SANTIZO", "telefono": "9626955929", "zona": "Zona 3", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "No indica"}, {"iglesia": "Torre Fuerte", "pastor": "M.L. FRANKLIN MORALES ANTONIO", "telefono": "9642178424", "zona": "Zona 2", "confirmados": 1, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Laicos no indica"}, {"iglesia": "Tuxtla Chico", "pastor": "PBRO. KARIN LORENA BARRIOS", "telefono": "9621082294", "zona": "Zona 4", "confirmados": 5, "mni": "Eduvina Gómez", "jni": "Daniel González", "dni": "Gisela González", "delegados": "Isela González Cruz"}, {"iglesia": "Tuzantán Estacion", "pastor": "PBRO. MIGUEL ANGEL VÁZQUEZ CHALECO", "telefono": "9646246291", "zona": "Zona 2", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Samuel Méndez López, Álvaro Marrón Maldonado"}, {"iglesia": "Tuzantán Pueblo", "pastor": "M. LIC. CIELO VÁZQUEZ HERRERA", "telefono": "9641005962", "zona": "Zona 2", "confirmados": 2, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Carmelino Gómez Sánchez"}, {"iglesia": "Vida Nueva", "pastor": "PBRO. MARCO ANTONIO VERA POSADA", "telefono": "9621689410", "zona": "Zona 4", "confirmados": 3, "mni": "No indica", "jni": "No indica", "dni": "No indica", "delegados": "Ever Hernández Morga, Guadalupe López Argueta"}, {"iglesia": "Viva México", "pastor": "PBRO. JOSUE MENDEZ ROQUE", "telefono": "9681254868", "zona": "Zona 4", "confirmados": 5, "mni": "Roberto Domínguez", "jni": "Alexandra Ruiz", "dni": "Irán Lizbeth", "delegados": "María Elvia de la Cruz, Irán Lizbeth Gómez"}];
+
+        function normalizarTexto(texto) {
+            return (texto || "")
+                .toString()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[̀-ͯ]/g, "")
+                .replace(/(\d+)[ª°]/g, "$1a")
+                .replace(/\./g, "")
+                .trim();
+        }
+
+        function crearTarjetaResultado(item) {
+            const telLimpio = item.telefono && item.telefono !== "No indica" ? item.telefono.replace(/\D/g, '') : "";
+            const telHtml = telLimpio 
+                ? `<a href="tel:+52${telLimpio}" class="inline-flex items-center gap-2 font-bold text-teal-700 hover:underline">
+                        <i class="fa-solid fa-phone text-xs"></i> ${item.telefono}
+                   </a>`
+                : `<span class="text-slate-400">No indica</span>`;
+
+            return `
+                <article class="bg-slate-900/95 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl transition-all hover:border-teal-600/40">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8">
+                        
+                        <!-- CÍRCULO CON NÚMERO DE DELEGADOS CONFIRMADOS EN GRANDE -->
+                        <div class="flex flex-col items-center shrink-0">
+                            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-gradient-to-br from-teal-700 via-teal-600 to-emerald-600 p-1.5 shadow-2xl flex items-center justify-center">
+                                <div class="w-full h-full rounded-full bg-white flex flex-col items-center justify-center text-center p-2 shadow-inner">
+                                    <span class="font-heading font-black text-6xl sm:text-7xl leading-none tracking-tighter" style="color: #087f78 !important;">
+                                        ${item.confirmados}
+                                    </span>
+                                    <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider mt-1" style="color: #a95835 !important;">
+                                        Confirmados
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INFORMACIÓN DETALLADA DE LA IGLESIA -->
+                        <div class="flex-1 w-full space-y-4 text-left">
+                            <div class="border-b border-slate-800 pb-3">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/15 text-amber-400 border border-amber-500/30 mb-2">
+                                    ${item.zona}
+                                </span>
+                                <h3 class="font-heading font-black text-2xl sm:text-3xl text-white leading-tight">
+                                    ${item.iglesia}
+                                </h3>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm sm:text-base">
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Pastor</span>
+                                    <span class="font-bold text-white">${item.pastor}</span>
+                                </div>
+
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Teléfonos</span>
+                                    <div>${telHtml}</div>
+                                </div>
+
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Zona</span>
+                                    <span class="font-semibold text-white">${item.zona}</span>
+                                </div>
+
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Presidente de MNI</span>
+                                    <span class="font-semibold text-white">${item.mni}</span>
+                                </div>
+
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Presidente de JNI</span>
+                                    <span class="font-semibold text-white">${item.jni}</span>
+                                </div>
+
+                                <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80">
+                                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Presidente de DNI</span>
+                                    <span class="font-semibold text-white">${item.dni}</span>
+                                </div>
+                            </div>
+
+                            <!-- Lista de Delegados -->
+                            <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/25">
+                                <span class="block text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-1">
+                                    <i class="fa-solid fa-users mr-1"></i> Delegados:
+                                </span>
+                                <p class="text-sm sm:text-base font-medium text-white leading-relaxed">
+                                    ${item.delegados}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function buscarDelegados() {
+            const input = document.getElementById('search-input');
+            const clearBtn = document.getElementById('clear-btn');
+            const counter = document.getElementById('results-counter');
+            const container = document.getElementById('results-container');
+            const rawQuery = input.value;
+            const query = normalizarTexto(rawQuery);
+
+            if (rawQuery.trim().length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            if (!query) {
+                counter.innerText = "Ingresa o dicta el nombre de una iglesia o pastor para ver su certificado";
+                container.innerHTML = "";
+                return;
+            }
+
+            const palabras = query.split(/\s+/).filter(Boolean);
+            const resultados = certificadosData.filter(item => {
+                const textoIglesia = normalizarTexto(item.iglesia);
+                const textoPastor = normalizarTexto(item.pastor);
+                const combinado = `${textoIglesia} ${textoPastor}`;
+                return palabras.every(p => combinado.includes(p));
+            });
+
+            if (resultados.length === 0) {
+                counter.innerText = `Sin coincidencias para "${rawQuery.trim()}"`;
+                container.innerHTML = `
+                    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 text-center space-y-2">
+                        <i class="fa-solid fa-church text-3xl text-slate-400"></i>
+                        <p class="font-heading font-bold text-lg text-white">No se encontró ninguna iglesia o pastor con ese nombre</p>
+                        <p class="text-xs text-slate-400">Intenta buscar con otra palabra clave o usa el botón de voz.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const totalDelegadosFiltrados = resultados.reduce((acc, r) => acc + (Number(r.confirmados) || 0), 0);
+            counter.innerText = `${resultados.length} iglesia(s) encontrada(s) • ${totalDelegadosFiltrados} delegado(s) confirmado(s)`;
+            container.innerHTML = resultados.map(item => crearTarjetaResultado(item)).join('');
+        }
+
+        function limpiarBusqueda() {
+            const input = document.getElementById('search-input');
+            const status = document.getElementById('voice-status');
+            input.value = "";
+            status.innerText = "";
+            buscarDelegados();
+            input.focus();
+        }
+
+        // BÚSQUEDA POR VOZ (Web Speech API)
+        let recognition = null;
+        let isListening = false;
+
+        function iniciarBusquedaVoz() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const statusEl = document.getElementById('voice-status');
+            const voiceBtn = document.getElementById('voice-btn');
+            const voiceLabel = document.getElementById('voice-label');
+            const voiceIcon = document.getElementById('voice-icon');
+            const searchInput = document.getElementById('search-input');
+
+            if (!SpeechRecognition) {
+                statusEl.innerText = "Tu navegador no soporta reconocimiento de voz. Usa Google Chrome o Edge.";
+                return;
+            }
+
+            if (isListening && recognition) {
+                recognition.stop();
+                return;
+            }
+
+            recognition = new SpeechRecognition();
+            recognition.lang = 'es-MX';
+            recognition.interimResults = true;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function() {
+                isListening = true;
+                voiceBtn.classList.add('listening-active');
+                voiceIcon.className = "fa-solid fa-waveform-lines animate-pulse text-2xl sm:text-3xl";
+                voiceLabel.innerText = "ESCUCHANDO... HABLA AHORA";
+                statusEl.innerText = "Di el nombre de la iglesia o del pastor...";
+            };
+
+            recognition.onresult = function(event) {
+                let transcript = "";
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    transcript += event.results[i][0].transcript;
+                }
+                transcript = transcript.replace(/\.$/, '').trim();
+                searchInput.value = transcript;
+                buscarDelegados();
+            };
+
+            recognition.onerror = function(event) {
+                let mensaje = "No se pudo captar la voz. Intenta de nuevo.";
+                if (event.error === 'not-allowed') {
+                    mensaje = "Permiso de micrófono denegado. Habilítalo en tu navegador.";
+                } else if (event.error === 'no-speech') {
+                    mensaje = "No se detectó voz. Presiona el botón e intenta nuevamente.";
+                }
+                statusEl.innerText = mensaje;
+            };
+
+            recognition.onend = function() {
+                isListening = false;
+                voiceBtn.classList.remove('listening-active');
+                voiceIcon.className = "fa-solid fa-microphone text-2xl sm:text-3xl";
+                voiceLabel.innerText = "ACTIVAR BÚSQUEDA POR VOZ";
+                if (searchInput.value.trim()) {
+                    statusEl.innerText = `Búsqueda por voz: "${searchInput.value.trim()}"`;
+                }
+            };
+
+            recognition.start();
+        }
+    </script>
+</body>
+</html>
